@@ -11,7 +11,7 @@ class UserController extends Controller
             return view('dashboard');
         }
         else{
-            return view('admin.dashboard');
+            return redirect()->route('admin.dashboard');
         }
     }
     public function index(Request $request){
@@ -19,7 +19,14 @@ class UserController extends Controller
             return view('admin.dashboard');
         }
         else{
-            return view('dashboard');
+            return redirect()->route('dashboard');
         }
+    }
+    public function post(){
+        return view('admin.post');
+
+    }
+    public function createpost(){
+        return view('admin.create');
     }
 }
