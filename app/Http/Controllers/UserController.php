@@ -22,11 +22,11 @@ class UserController extends Controller
             return redirect()->route('dashboard');
         }
     }
-    public function post(){
-        return view('admin.post');
+    // public function post(){
+    //     return view('admin.post');
 
-    }
-    public function createpost(){
-        return view('admin.create');
-    }
+    // }
+    // public function createpost(){
+    //     return view('admin.create');
+    // }
 }

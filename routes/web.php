@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('home');
@@ -13,8 +14,9 @@ Route::get('/dashboard',[UserController::class,'home'])->middleware(['auth', 've
 // Route::get('admin/dashboard',[UserController::class,'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
 Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
     Route::get('/dashboard',[UserController::class,'index'])->name('admin.dashboard');
-    Route::get('/dashboard/post',[UserController::class,'post'])->name('admin.dashboard.post');
-    Route::get('/dashboard/create',[UserController::class,'createpost'])->name('admin.dashboard.dashboard.create');
+    // Route::get('/dashboard/post',[UserController::class,'post'])->name('admin.dashboard.post');
+    // Route::get('/dashboard/create',[UserController::class,'createpost'])->name('admin.dashboard.create');
+    Route::get('/dashboard/addpost',[AdminController::class,'addpost'])->name('admin.addpost');
 });
 
 Route::middleware('auth')->group(function () {
