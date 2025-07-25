@@ -24,7 +24,7 @@
                             <form action="{{ route('admin.addpost') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="text" name="title" placeholder="Enter title here" id=""><br><br>
-                                <textarea style="width: 400px;height:auto;" name="Description" id="" cols="30" rows="10">Write a post here</textarea><br><br>
+                                <textarea style="width: 400px;height:200px;" name="Description" id="" cols="30" rows="10">Write a post here</textarea><br><br>
                                 <input type="file" name="image" id=""><br><br>
                                 <input type="submit" value="submit" style="border: 1px solid blue;color:white;padding:3px;text-align:center;background:rgb(24, 158, 140)">
                             </form>
