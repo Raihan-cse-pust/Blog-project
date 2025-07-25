@@ -38,36 +38,36 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to LaraBlog</h1>
-            <p>Discover amazing articles, tutorials, and insights about web development, Laravel, and modern PHP practices.</p>
-            <a href="/blog" class="btn btn-primary">Browse Articles</a>
-        </div>
-    </section>
-
+   
     <!-- Featured Posts -->
     <div class="container">
-        <h2 class="section-title">Featured Posts</h2>
+        <h2 class="section-title">Full post</h2>
         <div class="featured-posts">
-            <!-- Post 1 -->
-            @foreach($post as $posts)
-            <div class="post-card">
-                <div class="post-image">
-                    <img src="image/{{ $posts->image }}" alt="Laravel Tips">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span>{{ $posts->created_at }}</span>
-                        
+            <!--Single Post  -->
+            <div class="max-w-4xl px-4 py-8 mx-auto">
+                <!-- Post Header -->
+                <div class="mb-8">
+                    <h1 class="mb-2 text-3xl font-bold text-gray-900">{{ $post->title }}</h1>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <span>Published on {{ $post->created_at->format('F j, Y') }}</span>
+                        <span class="mx-2">•</span>
                     </div>
-                    <h3 class="post-title">{{ $posts->title }}</h3>
-                    <p class="post-excerpt">{{ $posts->Description }}</p>
-                    <a href="{{ route('fullpost',$posts->id) }}" class="read-more">Read More →</a>
+                </div>
+
+                <!-- Featured Image -->
+                @if($post->image)
+                <div class="mb-8 overflow-hidden rounded-lg">
+                    <img style="width: 400px;height:400px" src="{{ asset('image/' . $post->image) }}" alt="{{ $post->title }}" class="object-cover w-full h-auto">
+                </div>
+                @endif
+
+                <!-- Post Content -->
+                <div class="mb-12 ">
+                    {!! $post->Description !!}
                 </div>
             </div>
+        </div>
 
-            @endforeach
 
         <!-- Categories -->
         <h2 class="section-title">Browse Categories</h2>

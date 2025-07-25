@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', [UserController::class,'showDataInHome'])->name('home');
+Route::get('/fullpost/{id}', [UserController::class,'fullpost'])->name('fullpost');
 
 Route::get('/dashboard',[UserController::class,'home'])->middleware(['auth', 'verified'])->name('dashboard');
 
