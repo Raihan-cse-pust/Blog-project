@@ -11,6 +11,10 @@ class AdminController extends Controller
     public function addpost(){
         return view('admin.addpost');
     }
+    public function allpost(){
+        $post=Post::all();
+        return view('admin.allpost', compact('post'));
+    }
     public function createpost(Request $request){
         $request->validate([
         'title' => 'required|string|max:255',

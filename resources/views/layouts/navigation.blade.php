@@ -25,6 +25,9 @@
                         <x-nav-link :href="route('admin.addpost')" :active="request()->routeIs('admin.addpost')">
                             {{ __('Add Post') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('admin.allpost')" :active="request()->routeIs('admin.allpost')">
+                            {{ __('All Post') }}
+                        </x-nav-link>
                     @else
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
