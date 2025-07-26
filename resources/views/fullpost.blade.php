@@ -38,7 +38,7 @@
     </header>
 
     <!-- Hero Section -->
-   
+
     <!-- Featured Posts -->
     <div class="container">
         <h2 class="section-title">Full post</h2>
@@ -68,7 +68,9 @@
             </div>
         </div>
 
-
+        <div class="newsletter">
+        <livewire:comments :model="$post"/>
+    </div>
         <!-- Categories -->
         <h2 class="section-title">Browse Categories</h2>
         <div class="categories">
@@ -93,6 +95,7 @@
         </div>
     </div>
 
+    
     <!-- Footer -->
     <footer>
         <div class="container">
