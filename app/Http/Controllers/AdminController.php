@@ -75,7 +75,13 @@ class AdminController extends Controller
 
     }
 
-    // public function deletepost($id){
+    public function deletepost($id){
+        $post=Post::findOrfail($id);
+        $post->delete();
+        // return view('admin.postdeleate',compact('post'));
+        return redirect()->route('admin.allpost')->with('success', 'Post deleted successfully!');
+    }
+    // public function postdelete(Request $request, $id){
     //     $post=Post::findOrfail($id);
     //     $post->delete();
     //     return redirect()->route('admin.allpost')->with('success', 'Post deleted successfully!');

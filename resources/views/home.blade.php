@@ -59,7 +59,7 @@
                 <div class="post-content">
                     <div class="post-meta">
                         <span>{{ $posts->created_at }}</span>
-                        
+
                     </div>
                     <h3 class="post-title">{{ $posts->title }}</h3>
                     <p class="post-excerpt">{{ $posts->Description }}</p>
@@ -70,7 +70,10 @@
             @endforeach
 
         <!-- Categories -->
-        <h2 class="section-title">Browse Categories</h2>
+        <div class="grid grid-cols-4 gap-8 mt-8 md:grid-cols-2">
+  <div class="space-y-4">
+    <!-- Categories -->
+     <h2 class="section-title">Browse Categories</h2>
         <div class="categories">
             <a href="/category/laravel" class="category-tag">Laravel</a>
             <a href="/category/php" class="category-tag">PHP</a>
@@ -82,8 +85,10 @@
             <a href="/category/performance" class="category-tag">Performance</a>
         </div>
 
-        <!-- Newsletter -->
-        <div class="newsletter">
+  </div>
+  <div class="p-6 bg-white shadow-md rounded-xl">
+    <!-- Newsletter -->
+    <div class="newsletter">
             <h3>Subscribe to our Newsletter</h3>
             <p>Get the latest articles and news delivered to your inbox every week. No spam, ever.</p>
             <form class="newsletter-form">
@@ -91,6 +96,12 @@
                 <button type="submit">Subscribe</button>
             </form>
         </div>
+  </div>
+</div>
+
+
+        <!-- Newsletter -->
+
     </div>
 
     <!-- Footer -->
