@@ -38,7 +38,7 @@
                                     <td style="padding: 12px 15px;">{{Str::limit($posts->Description,50)}}</td>
                                     <td style="padding: 12px 15px;"><img style="width: 100px; height: 100px;" src="{{asset('image/'.$posts->image)}}" alt="{{$posts->image}}">
                                     <td style="padding: 12px 15px;">
-                                        <a href="" style="background-color: #2196F3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-right: 5px;">Update</a>
+                                        <a href="{{ route('admin.updatepost', $posts->id) }}" style="background-color: #2196F3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-right: 5px;">Update</a>
                                     </td>
                                     <td style="padding: 12px 15px;">
                                         <a href="" style="background-color: #f44336; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Delete</a>
